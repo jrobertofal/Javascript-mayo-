@@ -4,19 +4,19 @@
 
 
 
-// // for(let contador = 1; contador <=5; contador++){
-// //      console.log(contador)
-// //  }
+// for(let contador = 1; contador <=5; contador++){
+//      console.log(contador)
+//  }
 
 
 
-// // let ingresarNumero = Number(prompt("Ingresa un Numero"));
-// //     // ESTO ES UN CONTADOR
-// // for (let i = 1; i <= 10; i++) {
-// //     let resultado = ingresarNumero * i;
-// //     alert(ingresarNumero +" X "+ i +" = "+ resultado);
-// //     console.log( resultado )   
-// // }
+let ingresarNumero = Number(prompt("Ingresa un Numero"));
+    // ESTO ES UN CONTADOR
+for (let i = 1; i <= 10; i++) {
+    let resultado = ingresarNumero * i;
+    alert(ingresarNumero +" X "+ i +" = "+ resultado);
+    console.log( resultado )   
+}
 
 
 // // let numero1 = 0

@@ -47,5 +47,3 @@ switch (banco) {
 }
 
 alert("Tu pago del banco" + " " + banco + " tendra un interes " + cantidad * interes)
-
-alert("Welcome")
