@@ -185,7 +185,7 @@
 
 // La variable estando dentro del bloque sera una variable LOCAL.......
 
-// SI LA FUNCION NO ENCUENTRA A LA VARIABLE EN EL AMBITO LOCAL SALDRA A BUSCARLA AL AMBITO LOCAL
+// SI LA FUNCION NO ENCUENTRA A LA VARIABLE EN EL AMBITO LOCAL SALDRA A BUSCARLA AL AMBITO GLOBAL
 
 // function saludar() {
 //     let name = "carlos";

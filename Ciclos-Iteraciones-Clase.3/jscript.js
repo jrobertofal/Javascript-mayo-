@@ -10,51 +10,51 @@
 
 
 
-let ingresarNumero = Number(prompt("Ingresa un Numero"));
-    // ESTO ES UN CONTADOR
-for (let i = 1; i <= 10; i++) {
-    let resultado = ingresarNumero * i;
-    alert(ingresarNumero +" X "+ i +" = "+ resultado);
-    console.log( resultado )   
-}
+// let ingresarNumero = Number(prompt("Ingresa un Numero"));
+//     // ESTO ES UN CONTADOR
+// for (let i = 1; i <= 10; i++) {
+//     let resultado = ingresarNumero * i;
+//     alert(ingresarNumero +" X "+ i +" = "+ resultado);
+//     console.log( resultado )   
+// }
 
 
-// // let numero1 = 0
-// // let numero2 = 1
-// // let numero3 = 0
+// let numero1 = 0
+// let numero2 = 1
+// let numero3 = 0
 
-// // console.log( numero2 )
+// console.log( numero2 )
 
-// // for( let i = 1; i < 10; i++){
-// //     numero3 = numero1 + numero2;
-// //     console.log( numero3 )
-// //     numero1 = numero2;
-// //     numero2 = numero3;
-// // }
+// for( let i = 1; i < 10; i++){
+//     numero3 = numero1 + numero2;
+//     console.log( numero3 )
+//     numero1 = numero2;
+//     numero2 = numero3;
+// }
 
 
 
-// // BREAK AND CONTINUE
+// BREAK AND CONTINUE
 
-// // for (let  i = 0; i < 10; i++){
-// //     if(i === 8) {
-// //         break
-// //     }
+// for (let  i = 0; i < 20; i++){
+//     if(i === 7) {
+//         break
+//     }
 
-// //     console.log( i )
+//     console.log( i )
     
-// // }
+// }
 
 
-// // WHILE
+// WHILE - Casi no le entiendo 05/06/22
 
 // let contador = 1
 
 // while ( contador <= 100 ) {
 
-//     console.log( contador )
-
-//     contador <= 10
+//   console.log( contador )
+  
+//   contador <= 10
 // }
 
 
@@ -132,8 +132,21 @@ for (let i = 1; i <= 10; i++) {
 
 // EJEMPLO
 
-// const banco =
+// APARTE EJERCICIOS
+
+// for (let i = 0; i < cars.lenght; i++) {
+
+//     text += cars[i] + "<br>";
+// }
+
+// for SIMPLIFICA CODIGO
+
+// let text = prompt("algo")
+
+// for (let i = 0; i < 7; i++) {
+//     text += "The number is " + i + "<br>";
+//   }
 
 
-
+//   console.log( text )
 console.log("Fin del programa")
