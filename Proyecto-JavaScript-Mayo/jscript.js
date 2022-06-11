@@ -60,3 +60,13 @@
 // }
 
 // crearUsuario();
+
+
+
+const mascota = ["Perro","Gato","Elefante","Gaviota","Zorro"]
+
+mascota.push("Paloma","Rino")
+
+mascota.splice(2, 3, "Tortuga")
+
+console.log(mascota.join("////"))

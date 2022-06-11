@@ -166,27 +166,27 @@
 
     // CLASS JAVASCRIPT
 
-    class Producto {
-        constructor (nombre, precio){
-            this.nombre = nombre.toUppercase();
-            this.precio = parseFloat(precio);
-            this.vendido = false;
-        }
-        sumaIva() {
-            this.precio = this.precio * 1.25;
-        }
-        vender() {
-            this.vendido = true;
-        }
+    // class Producto{
+    //     constructor (nombre, precio){
+    //         this.nombre = nombre.toUppercase();
+    //         this.precio = parseFloat(precio);
+    //         this.vendido = false;
+    //     }
+    //     sumaIva(){
+    //         this.precio = this.precio * 1.25;
+    //     }
+    //     vender(){
+    //         this.vendido = true;
+    //     }
 
-    }
+    // }
 
-    const producto1 = new Producto("Arroz","125")
+    // const producto1 = new Producto("Arroz","125")
     // const producto2 = new Producto("Spaguetti","25")
-     produucto1.sumaIva();
+    //  produucto1.sumaIva();
     // produucto2.sumaIva();
-     producto1.vender();
+    //  producto1.vender();
 
-    console.log(producto1)
+    // console.log(producto1)
 
     // EL += ES UN ACUMULADOR
