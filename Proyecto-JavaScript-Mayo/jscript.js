@@ -111,3 +111,5 @@ porCadaUno(nombres, console.log)
 const duplicar = (num) => {
     console.log(num * 2)
 }
+
+// 15/06/22
