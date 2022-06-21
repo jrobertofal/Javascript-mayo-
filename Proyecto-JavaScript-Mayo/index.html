@@ -7,107 +7,213 @@
     <title>Javascript----Mayo</title>
     <link rel="stylesheet" href="main.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <script src="./jscript.js"></script>
+    <script defer src="./products.js"></script>
+    <script defer src="./jscript.js"></script>
 </head>
 <body>
 <!--  -->
     <div class="upside">
-        <h1>Lorem</h1>
-
-        <label for="" class="upside__botton"><i class='bx bx-up-arrow-circle'></i></label>
-
-        <label for="" class="upside__bottom"><i class='bx bx-dots-vertical-rounded'></i></label>
+        <h1>Hotel Boutique</h1>
+        <label class="upside__info" id="iniciar-modal" for=""><i class='bx bx-question-mark'></i></label>
     </div>
+<!-- MODAL-UPSIDE -->
 
-    <div class="place">
-        <input type="button" class="place__location" value="Fechas">
+
+<div id="modal-upside" class="modal-upside">
+    <div id="modal" class="question-modal">
+        <h4>Informacion</h4>
+        <hr>
+        <p><strong>Hubicacion:</strong> Lorem ipsum.</p>
+        <p><strong>Habitaciones:</strong> Lorem ipsum.</p>
+        <p><strong>Restaurante:</strong> Lorem ipsum.</p>
+        <p><strong>Personal:</strong> Lorem ipsum.</p>
+        <button id="cerrar-modal">Cerrar</button>
     </div>
+</div>
+
+    <!-- -->
+<!--NAVEGACION  -->
+<nav class="nav">
+    <ul class="nav__list">
+
+        <a href="#home" class="nav__link active-link">
+            <i class='bx bx-home-alt-2' ></i>
+            <span class="nav__name">
+            Habitacion
+            </span>
+        </a>
+
+        <a href="#profile" class="nav__link">
+            <i class='bx bxs-shopping-bag' ></i>
+            <span class="nav__name">
+                Guardado
+            </span>
+        </a>
+
+        <a href="#message" class="nav__link">
+            <i class='bx bx-line-chart'></i>
+                <span class="nav__name">
+                    Ofertas
+                </span>
+        </a>
+
+        <a href="#mail" class="nav__link">
+            <i class='bx bx-user-circle'></i>
+                    <span class="nav__name">
+                        Usuario
+                    </span>
+        </a>
+
+    
+        <a href="#settings" class="nav__link">
+            <i class='bx bx-cog'></i>
+                    <span class="nav__name">
+                    Configuracion
+                    </span>
+        </a>
+
+        <!-- <svg class="indicator" width="94" height="56" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="47" cy="28" rx="24" ry="28"/>
+            <path d="M24 20C24 20 28 55.9999 48 56L0 55.9997C18 55.9998 24 20 24 20Z"/>
+            <path d="M70 20C70 20 66 55.9999 46 56L94 55.9997C76 55.9998 70 20 70 20Z"/>
+        </svg> -->
+    </ul>
+</nav>
 
 <!--  -->
 
-    <div class="categorias__h2">
-        <label for="" class="menu__botton"><i class='bx bx-home'></i></label>
-        <h2>Habitaciones</h2>
-        <label for="" class="menu__cate"><i class='bx bx-align-right'></i></i></label>
-        </div>  
-        <hr>
-        <!--  -->
-        <div class="container">
-        <div class="container__rest">
-            <h4>Habitacion 1</h4>
-            <figure>
+<main class="container">
+    <h2>Habitacion</h2>                
+    
+<section class="home" id="prodhome">
+    <section id="home">
+    <div class="container__rest">
+            <!-- <h4>Habitacion 1</h4>
+                <figure>
                 <img src="./img/img1.jpg" alt="">
-            </figure>
-                <input type="button" value="Entrar">
+                </figure>
+                <p><strong>Precio:</strong> 3,000</p>
+                <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+                <button class="producto-guardar">Guardar</button> -->
+        </div>
+    </section>
+    </section>
+
+    
+    <!-- <input class="producto-guardar" type="button" value="Guardar"> -->
+
+
+<!--  -->
+
+<section id="profile">
+        <h2>Guardado</h2>
+        
+        <div class="precio-total">
+            <button><p>Numero de habitaciones</p><span id="contadorCarrito">0</span></button>
+            <p></p>
+            <p class="precioProducto">Precio Total: $ <span id="precioTotal">0</span></p>
+            <button id="vaciarCarrito" class="boton-eliminar">Vaciar</button>
         </div>
 
-        
-
+    </section>
+<!--  -->
+<h2>Ofertas</h2>
+    <section id="message" class="ofertas">
         <div class="container__hotel">
+            <div class="contenido">
             <h4>Habitacion 2</h4>
             <figure>
                 <img src="./img/img2.jpg" alt="">
             </figure>
-                <input type="button" value="Entrar">
+            <p><strong>Precio:</strong> 5,000</p>
+            <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+            <p><strong>Oferta:</strong> 15%</p>
+                <button>Guardar</button>
+            </div>
         </div>
 
         
 
         <div class="container__antro">
+            <div class="contenido">
             <h4>Habitacion 3</h4>
             <figure>
                 <img src="./img/img3.jpg" alt="">
             </figure>
-                <input type="button" value="Entrar">
+            <p><strong>Precio:</strong> 5,000</p>
+            <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+            <p><strong>Oferta:</strong> 15%</p>
+                <button>Guardar</button>
+            </div>
         </div>
 
        
 
         <div class="container__teatro">
+            <div class="contenido">
             <h4>Habitacion 4</h4>
             <figure>
                 <img src="./img/img4.jpg" alt="">
             </figure>
-                <input type="button" value="Entrar">
-        </div>
-
-    </div>
-
-    <div class="formulario">
-        <form class="form">
-            <h2 class="form__title">Inicia Sesion</h2>
-            <p class="form__parrafo">¿NO Tienes Cuenta?<a href="" class="form__link">Entra aqui</a></p>
-    
-            <div class="form__container">
-                <div class="form__group">
-                    <input type="text" id="name" class="form__input" placeholder=" ">
-                    <label for="name" class="form__label">Nombre</label>
-                    <span class="form__line"> </span>
-                </div>
-    
-                <div class="form__group">
-                    <input type="text" id="user" class="form__input" placeholder=" ">
-                    <label for="user" class="form__label">Usuario</label>
-                    <span class="form__line"> </span>
-                </div>
-    
-                <div class="form__group">
-                    <input type="text" id="password" class="form__input" placeholder=" ">
-                    <label for="password" class="form__label">Correo Electronico</label>
-                    <span class="form__line"> </span>
-                </div>
-
-                <div class="form__group">
-                    <input type="text" id="password" class="form__input" placeholder=" ">
-                    <label for="password" class="form__label">Contraseña</label>
-                    <span class="form__line"> </span>
-                </div>
-    
-                <input type="submit" class="form__submit" value="entrar">
+            <p><strong>Precio:</strong> 5,000</p>
+            <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+            <p><strong>Oferta:</strong> 15%</p>
+                <button>Guardar</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </section>
+    
+    <section class="formulario" id="mail">
+        <h2>Usuario</h2>
+        <div id="my-form">
+            <form class="form">
+                <h2 class="form__title">Inicia Sesion</h2>
+                <p class="form__parrafo">¿NO Tienes Cuenta?<a href="" class="form__link">Entra aqui</a></p>
+                
+                <div class="form__container">
+                    <div class="form__group">
+                        <input type="text" id="name" class="form__input" placeholder=" ">
+                        <label for="name" class="form__label">Nombre</label>
+                        <span class="form__line"> </span>
+                    </div>
+                    
+                    <div class="form__group">
+                        <input type="text" id="user" class="form__input" placeholder=" ">
+                        <label for="user" class="form__label">Usuario</label>
+                        <span class="form__line"> </span>
+                    </div>
+        
+                    <div class="form__group">
+                        <input type="text" id="mail" class="form__input" placeholder=" ">
+                        <label for="password" class="form__label">Correo Electronico</label>
+                        <span class="form__line"> </span>
+                    </div>
+                    
+                    <div class="form__group">
+                        <input type="password" id="form-pass" class="form__input" placeholder=" ">
+                        <label for="password" class="form__label">Contraseña<i id="btn-pass" class='bx bx-show-alt'></i></label>
+                        <span class="form__line"> </span>
+                    </div>
+                    
+                    <input type="submit" id="form__enviar" class="form__submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </section>
+    
 
+<!-- CONFIGURACION -->
 
+    
+    
+    <section class="configuracion" id="settings">
+        <h2>Configuracion</h2>
+        <button>Acerca de mi cuenta</button>
+        <button>Terminos de privacidad</button>
+        <button>Metodos de pago</button>
+        <button>Pagos</button>
+        <button>Cerrar Sesion</button>
+    </section>
+</main>
 </body>
 </html>

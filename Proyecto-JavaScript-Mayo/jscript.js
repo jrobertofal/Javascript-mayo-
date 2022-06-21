@@ -1,115 +1,179 @@
+// scrolling links
 
+const sections = document.querySelectorAll('section[id]')
 
+function scrollActive(){
+    const scrollY = window.pageYOffset
 
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id')
 
-
-
-let ingresarUsuario = prompt("Ingresa Tu Usuario");
-    // ESTO ES UN CONTADOR
-for (let i = 1; i <= 1; i++) {
-    let resultado = ingresarUsuario * i;
-    alert("Bienvenido; " + ingresarUsuario + ".");
-    console.log( resultado )   
-};
-
-
-function Usuario(nombre, apellido) {
-    this.nombre = nombre;
-    this.apellido = apellido;
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__list a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__list a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
 }
+window.addEventListener('scroll', scrollActive)
 
-function crearUsuario() {
-    let nombre = prompt("Ingresa tu Nombre");
-    let apellido = prompt("Ingresa tu apellido");
-  
-    const usuario1 = new Usuario(nombre, apellido);
-    console.log(usuario1);
-}
+// MODAL QUESTION
 
-crearUsuario();
+const modalUpside = document.querySelector('#modal-upside')
+const openModal = document.querySelector('#iniciar-modal')
+const closeModal = document.querySelector('#cerrar-modal')
 
-class Producto {
-constructor(id, nombre, precio) {
-    this.id = id
-    this.nombre = nombre
-    this.precio = precio
-}
-}
+openModal.addEventListener('click', () => {
+    modalUpside.classList.add('modal-upside--visible')
+})
 
-const productos = [
-new Producto(1, "Habitacion 1", 5000),
-new Producto(2, "Habitacion 2", 3500),
-new Producto(3, "Habitacion 3", 1700),
-new Producto(4, "Habitacion 4", 1300)
+closeModal.addEventListener('click', () => {
+    modalUpside.classList.remove('modal-upside--visible')
+})
 
-]
+// FORMULARIO
 
-for (const producto of productos) {
-console.log(producto)
-}
+const formulario = document.querySelector("#my-form")
+const inputNombre = document.querySelector("#name")
+const inputUsuario = document.querySelector("#user")
+const enviarForm = document.querySelector("#form__enviar")
 
-let habitacion = prompt("Ingresa el numero de habitacion favorita")
-
-if(habitacion === 1){
-    alert("Bienvenido, tu habitacion esta disponible")
-}
-else if(habitacion === 2){
-    alert("Lo sentimos, tu habitacion no esta disponible")
-}
-else if(habitacion === 3){
-    alert("Bienvenido, tu habitacion esta disponible")
-}
-else if(habitacion === 4){
-    alert("Lo sentimos, tu habitacion no esta disponible") 
-}
-else if(habitacion >= 5){
-    alert("Ingresa una habitacion valida")
-}
-
-// function precio() {
-//      let dias = Number(prompt("Ingresa el numero de dias a hospedarte")); 
-     
-//      alert("El precio por tu habitacion es de: " + dias * Producto );
-// }
-
-
-//  precio();
-
-
- const habitacionNumero = [
-    {nombre: "Habitacion 1", precio: 5000},
-    {nombre: "Habitacion 2", precio: 3500},
-    {nombre: "Habitacion 3", precio: 7000},
-    {nombre: "Habitacion 4", precio: 1300},
-]
-
-
-// filter
-const baratos = habitacionNumero.filter( (prod) => prod.precio <= 5000)
-
-console.log( baratos )
-
-const prodFiltrados = habitacionNumero.filter( (prod) => prod.nombre !== "Habitacion 1" )
-
-console.log( prodFiltrados )
-
-
-const numeros = [1, 2, 3, 4]
-const nombres = ["Habitacion 1", "Habitacion 2", "Habitacion 3", "Habitacion 4"]
-
-
-
-const porCadaUno = (array, fn) => {
-    for (const element of array) {
-        fn(element)
+inputNombre.addEventListener("keydown", (event) => {
+    if (inputNombre.value.length <= 7) {
+        inputNombre.classList.add("border-danger")
+        inputNombre.classList.remove("border-success")
     }
+    else {
+        inputNombre.classList.add("border-success")
+        inputNombre.classList.remove("border_danger")
+    }
+})
+
+inputUsuario.addEventListener("keydown", () => {
+    if (inputUsuario.value.length <= 7) {
+        inputUsuario.classList.add("border-danger")
+        inputUsuario.classList.remove("border-success")
+    }
+    else {
+        inputUsuario.classList.add("border-success")
+        inputUsuario.classList.remove("border_danger")
+    }
+})
+
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log(e)
+
+    const userDatos = {
+        nombre: inputNombre.value,
+        usuario: inputUsuario.value,
+        password: inputPassword.value
+    }
+
+    console.log(userDatos)
+})
+
+const inputPassword = document.querySelector("#form-pass")
+const btnPass = document.querySelector("#btn-pass")
+
+btnPass.addEventListener("click", (e) => {
+    e.preventDefault()
+    if (inputPassword.type === "password") {
+        inputPassword.type = "text"
+    }
+    else {
+        inputPassword.type = "password"
+    }
+})
+
+// PRODUCTOS X# 
+// GUARDAR
+
+// SELECTORES
+const productosHabitaciones = document.querySelector("#prodhome")
+const profile = document.querySelector("#profile")
+const contadorCarrito = document.querySelector('#contadorCarrito')
+const precioTotal = document.querySelector("#precioTotal")
+const btnVaciar = document.getElementById("vaciarCarrito")
+
+const guardado = []
+
+// DOM PRODUCTOS
+productosHome.forEach((producto) => {
+    const div = document.createElement("div")
+    div.classList.add("producto")
+
+    div.innerHTML = `
+                <div class= "contenido">
+                <h4>${producto.nombre}</h4>
+                <figure>
+                <img src="${producto.img}" alt="">
+                </figure>
+                <p><strong>Precio:</strong>${producto.precio}</p>
+                <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+                <button class="producto-guardar" onclick="agregarAlCarrito(${producto.id})">Guardar</button>
+                </div>
+            `
+
+    productosHabitaciones.append(div)
+})
+
+const ageregarAlCarrito = (id) => {
+    const item = productosHome.find( (producto) => producto.id === id)
+    guardado.push(item)
+
+    console.log(guardado)
+    renderGuardado()
+    renderCantidad()
+    renderTotal()
 }
 
-porCadaUno(numeros, alert)
-porCadaUno(nombres, console.log)
+const removerDelCarrito = (id) => {
+    const item = guardado.find((producto) => producto.id === id)
+    const indice = guardado.indexOf(item)
+    guardado.splice(indice, 1)
 
-const duplicar = (num) => {
-    console.log(num * 2)
+    renderGuardado()
+    renderCantidad()
+    renderTotal()
 }
 
-// 15/06/22
+const vaciarCarrito = () => {
+    guardado.length = 0
+
+    renderGuardado()
+    renderCantidad()
+    renderTotal()
+}
+
+btnVaciar.addEventListener("click", vaciarCarrito)
+
+const renderGuardado = () => {
+    profile.innerHTML = ``
+
+    guardado.forEach((item) => {
+        const div = document.createElement("div")
+        div.classList.add("productoEnGuardado")
+
+        div.innerHTML = `
+        <p>${item.nombre}</p>
+        <p class="precioProducto">Precio Total: $${item.precio} <span id="precioTotal">0</span></p>
+        <button id="vaciarCarrito"(${item.id}) class="boton-eliminar">Vaciar</button>`
+            profile.append(div)
+    })
+}
+
+const renderCantidad = () => {
+    contadorCarrito.innerText = guardado.lenght
+}
+
+const renderTotal = () => {
+    let total = 0
+    guardado.forEach((producto) => {
+        total += producto.precio
+    })
+
+    precioTotal.innerText = total
+}
