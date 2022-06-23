@@ -11,11 +11,6 @@
     <script defer src="./jscript.js"></script>
 </head>
 <body>
-<!--  -->
-    <div class="upside">
-        <h1>Hotel Boutique</h1>
-        <label class="upside__info" id="iniciar-modal" for=""><i class='bx bx-question-mark'></i></label>
-    </div>
 <!-- MODAL-UPSIDE -->
 
 
@@ -39,28 +34,24 @@
         <a href="#home" class="nav__link active-link">
             <i class='bx bx-home-alt-2' ></i>
             <span class="nav__name">
-            Habitacion
             </span>
         </a>
 
         <a href="#profile" class="nav__link">
             <i class='bx bxs-shopping-bag' ></i>
             <span class="nav__name">
-                Guardado
             </span>
         </a>
 
         <a href="#message" class="nav__link">
             <i class='bx bx-line-chart'></i>
                 <span class="nav__name">
-                    Ofertas
                 </span>
         </a>
 
         <a href="#mail" class="nav__link">
             <i class='bx bx-user-circle'></i>
                     <span class="nav__name">
-                        Usuario
                     </span>
         </a>
 
@@ -68,26 +59,23 @@
         <a href="#settings" class="nav__link">
             <i class='bx bx-cog'></i>
                     <span class="nav__name">
-                    Configuracion
                     </span>
         </a>
-
-        <!-- <svg class="indicator" width="94" height="56" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="47" cy="28" rx="24" ry="28"/>
-            <path d="M24 20C24 20 28 55.9999 48 56L0 55.9997C18 55.9998 24 20 24 20Z"/>
-            <path d="M70 20C70 20 66 55.9999 46 56L94 55.9997C76 55.9998 70 20 70 20Z"/>
-        </svg> -->
     </ul>
 </nav>
 
 <!--  -->
 
 <main class="container">
-    <h2>Habitacion</h2>                
     
-<section class="home" id="prodhome">
-    <section id="home">
-    <div class="container__rest">
+    <section class="home" id="prodhome">
+        
+        <div id="home" class="container__rest">
+            <div class="upside">
+                <h1>Hotel Boutique</h1>
+                <label class="upside__info" id="iniciar-modal" for=""><i class='bx bx-question-mark'></i></label>
+            </div>
+                        
             <!-- <h4>Habitacion 1</h4>
                 <figure>
                 <img src="./img/img1.jpg" alt="">
@@ -96,26 +84,16 @@
                 <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
                 <button class="producto-guardar">Guardar</button> -->
         </div>
-    </section>
-    </section>
-
     
-    <!-- <input class="producto-guardar" type="button" value="Guardar"> -->
-
+    </section>
 
 <!--  -->
 
-<section id="profile">
         <h2>Guardado</h2>
+        <section id="profile">
         
-        <div class="precio-total">
-            <button><p>Numero de habitaciones</p><span id="contadorCarrito">0</span></button>
-            <p></p>
-            <p class="precioProducto">Precio Total: $ <span id="precioTotal">0</span></p>
-            <button id="vaciarCarrito" class="boton-eliminar">Vaciar</button>
-        </div>
-
-    </section>
+        </section>
+        <button id="vaciarCarrito" class="boton-vaciar">Vaciar</button>
 <!--  -->
 <h2>Ofertas</h2>
     <section id="message" class="ofertas">
@@ -126,9 +104,9 @@
                 <img src="./img/img2.jpg" alt="">
             </figure>
             <p><strong>Precio:</strong> 5,000</p>
-            <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+            <p><strong>Disponible:(No disponible)</strong><i class='bx bx-check-square' ></i></p>
             <p><strong>Oferta:</strong> 15%</p>
-                <button>Guardar</button>
+                <button class="button-ofer">Guardar</button>
             </div>
         </div>
 
@@ -141,9 +119,9 @@
                 <img src="./img/img3.jpg" alt="">
             </figure>
             <p><strong>Precio:</strong> 5,000</p>
-            <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+            <p><strong>Disponible:(No disponible)</strong><i class='bx bx-check-square' ></i></p>
             <p><strong>Oferta:</strong> 15%</p>
-                <button>Guardar</button>
+            <button class="button-ofer">Guardar</button>
             </div>
         </div>
 
@@ -156,9 +134,9 @@
                 <img src="./img/img4.jpg" alt="">
             </figure>
             <p><strong>Precio:</strong> 5,000</p>
-            <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
+            <p><strong>Disponible:(No disponible)</strong><i class='bx bx-check-square' ></i></p>
             <p><strong>Oferta:</strong> 15%</p>
-                <button>Guardar</button>
+            <button class="button-ofer">Guardar</button>
             </div>
         </div>
     </section>

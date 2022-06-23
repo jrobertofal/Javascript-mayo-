@@ -1,21 +1,9 @@
 // scrolling links
 
-const sections = document.querySelectorAll('section[id]')
+const sections = document.querySelectorAll('div[id]')
 
 function scrollActive(){
     const scrollY = window.pageYOffset
-
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id')
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__list a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__list a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
-    })
 }
 window.addEventListener('scroll', scrollActive)
 
@@ -64,7 +52,6 @@ inputUsuario.addEventListener("keydown", () => {
 
 formulario.addEventListener("submit", (e) => {
     e.preventDefault()
-    console.log(e)
 
     const userDatos = {
         nombre: inputNombre.value,
@@ -90,7 +77,6 @@ btnPass.addEventListener("click", (e) => {
 
 // PRODUCTOS X# 
 // GUARDAR
-
 // SELECTORES
 const productosHabitaciones = document.querySelector("#prodhome")
 const profile = document.querySelector("#profile")
@@ -112,43 +98,37 @@ productosHome.forEach((producto) => {
                 <img src="${producto.img}" alt="">
                 </figure>
                 <p><strong>Precio:</strong>${producto.precio}</p>
-                <p><strong>Disponible:</strong><i class='bx bx-check-square' ></i></p>
-                <button class="producto-guardar" onclick="agregarAlCarrito(${producto.id})">Guardar</button>
+                <p><strong>Disponible:</strong><i class='bx bx-check-square'></i></p>
+                <button onclick="agregarAlGuardado(${producto.id})" class="producto-guardar">Guardar</button>
                 </div>
             `
 
     productosHabitaciones.append(div)
 })
 
-const ageregarAlCarrito = (id) => {
+const agregarAlGuardado = (id) => {
     const item = productosHome.find( (producto) => producto.id === id)
     guardado.push(item)
 
     console.log(guardado)
     renderGuardado()
-    renderCantidad()
-    renderTotal()
 }
 
-const removerDelCarrito = (id) => {
+const eliminarGuardado = (id) => {
     const item = guardado.find((producto) => producto.id === id)
     const indice = guardado.indexOf(item)
     guardado.splice(indice, 1)
 
     renderGuardado()
-    renderCantidad()
-    renderTotal()
 }
 
-const vaciarCarrito = () => {
+const vaciarGuardado = () => {
     guardado.length = 0
 
     renderGuardado()
-    renderCantidad()
-    renderTotal()
 }
 
-btnVaciar.addEventListener("click", vaciarCarrito)
+btnVaciar.addEventListener("click", vaciarGuardado)
 
 const renderGuardado = () => {
     profile.innerHTML = ``
@@ -158,22 +138,16 @@ const renderGuardado = () => {
         div.classList.add("productoEnGuardado")
 
         div.innerHTML = `
-        <p>${item.nombre}</p>
-        <p class="precioProducto">Precio Total: $${item.precio} <span id="precioTotal">0</span></p>
-        <button id="vaciarCarrito"(${item.id}) class="boton-eliminar">Vaciar</button>`
-            profile.append(div)
+        <p><strong>${item.nombre}</strong></p>
+        <p class="precioProducto">Precio Total: $${item.precio} <span id="precioTotal"></span></p>
+        <button onclick="eliminarGuardado"(${item.id}) class="boton-eliminar">Eliminar</button>`
+
+        profile.append(div)
+        profile.querySelector(".boton-eliminar").addEventListener("click", eliminarItem)
     })
 }
 
-const renderCantidad = () => {
-    contadorCarrito.innerText = guardado.lenght
-}
-
-const renderTotal = () => {
-    let total = 0
-    guardado.forEach((producto) => {
-        total += producto.precio
-    })
-
-    precioTotal.innerText = total
+function eliminarItem(e) {
+    const buttonEliminar = e.target;
+    buttonEliminar.closest(".productoEnGuardado").remove();
 }

@@ -182,7 +182,6 @@ body{
     grid-row-start: 1;
     font-family: 'Castoro', serif;
     font-size: 30px;
-    max-width: 968px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -190,7 +189,6 @@ body{
 .upside__info{
     grid-column-start: 13;
     grid-row-start: 1;
-    margin-top: 7px;
     font-size: 27px;
     cursor: pointer;
 }
@@ -240,41 +238,20 @@ body{
     cursor: pointer;
 }
 
-/* CONTENIDO */
-/* .home{
-    background-color: #F7E9D7;
-    width: 250px;
-    text-align: center;
-    display: inline-block;
-    padding: 10px;
-    margin-top: 10px;
-    color: orangered;
-    border: 1px solid orangered;
-    border-radius: 4px;
-    transition: all 400ms ease;
-}
-img{
-    width: 100%;
-    height: 140px;
-} */
 
-
-.home{
+.producto{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
-    border-radius: 1px solid black;
-    width: 400px;
+    max-width: 400px;
     text-align: center;
-}
-.producto{
-    max-width: 100%;
     padding: 10px;
     margin-bottom: 20px;
+    margin-top: 5px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     background-color: rgb(255, 237, 204);
     border-radius: 7px;
+    border: 1px solid orangered;
 }
 .producto i{
     color: green;
@@ -293,32 +270,6 @@ img{
     cursor: pointer;
 }
 
-
-
-/* UPSIDE */
-.place{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-}
-.place__upside{
-    grid-column-start: 2;
-}
-.place__upside p {
-    width: 310px;
-    margin: 10px;
-    font-family: 'helvetica neue', helvetica, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    border: 2px solid orangered;
-    background: rgb(252, 179, 44);
-    color: black;
-    box-shadow: 1px 1px 2px orange;
-    border-radius: 10px;
-    padding: 3px 10px;
-    display: inline-block;
-    cursor: pointer;
-  }
 /*  */
 
 /* OFERTAS */
@@ -328,7 +279,7 @@ img{
     flex-wrap: wrap;
 }
 .ofertas div{
-    border: 1px solid orangered;
+    /* border: 1px solid orangered; */
     margin-bottom: 5px;
     width: 250px;
     border-radius: 7px;
@@ -337,14 +288,52 @@ img{
 }
 .ofertas img{
     width: 100%;
-    height: 100%;
+    height: 200px;
 }
-.ofertas button {
+.ofertas .button-ofer {
     background-color: orange;
     padding: 5px;
     border: 1px solid orangered;
     border-radius: 7px;
 }
+.ofertas i{
+    color: red;
+    font-size: 20px;
+}
+/* GUARDADO */
+
+.productoEnGuardado{
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid orange;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 243, 222);
+}
+.productoEnGuardado .boton-eliminar{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: rgb(255, 50, 50);
+    cursor: pointer;
+}
+/* VACIAR GUARDADO */
+
+.boton-vaciar{
+    margin-left: 70px;
+    width: 250px;
+    max-width: 250px;
+    color: white;
+    background-color: rgb(255, 54, 54);
+    font-size: 15px;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
+}
+
 /* FORMULARIO */
 
 .form{
