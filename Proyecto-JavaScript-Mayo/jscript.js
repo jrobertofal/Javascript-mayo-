@@ -1,12 +1,3 @@
-// scrolling links
-
-const sections = document.querySelectorAll('div[id]')
-
-function scrollActive(){
-    const scrollY = window.pageYOffset
-}
-window.addEventListener('scroll', scrollActive)
-
 // MODAL QUESTION
 
 const modalUpside = document.querySelector('#modal-upside')
@@ -84,7 +75,8 @@ const contadorCarrito = document.querySelector('#contadorCarrito')
 const precioTotal = document.querySelector("#precioTotal")
 const btnVaciar = document.getElementById("vaciarCarrito")
 
-const guardado = []
+let guardado
+const guardadoEnLS = JSON.parse(localStorage.getItem("guardado"))
 
 // DOM PRODUCTOS
 productosHome.forEach((producto) => {
@@ -110,6 +102,8 @@ const agregarAlGuardado = (id) => {
     const item = productosHome.find( (producto) => producto.id === id)
     guardado.push(item)
 
+    localStorage.setItem("guardado", JSON.stringify(guardado))
+
     console.log(guardado)
     renderGuardado()
 }
@@ -119,11 +113,15 @@ const eliminarGuardado = (id) => {
     const indice = guardado.indexOf(item)
     guardado.splice(indice, 1)
 
+    localStorage.setItem("guardado", JSON.stringify(guardado))
+    
     renderGuardado()
 }
 
 const vaciarGuardado = () => {
     guardado.length = 0
+
+    localStorage.setItem("guardado", JSON.stringify(guardado))
 
     renderGuardado()
 }
@@ -131,7 +129,7 @@ const vaciarGuardado = () => {
 btnVaciar.addEventListener("click", vaciarGuardado)
 
 const renderGuardado = () => {
-    profile.innerHTML = ``
+    profile.innerHTML = ''
 
     guardado.forEach((item) => {
         const div = document.createElement("div")
@@ -150,4 +148,12 @@ const renderGuardado = () => {
 function eliminarItem(e) {
     const buttonEliminar = e.target;
     buttonEliminar.closest(".productoEnGuardado").remove();
+    localStorage.setItem("guardado", JSON.stringify(guardado))
 }
+
+if(guardadoEnLS) {
+    guardado = guardadoEnLS,
+    renderGuardado()
+ } else{
+    guardado = []
+ }

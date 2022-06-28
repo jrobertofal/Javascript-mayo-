@@ -1,9 +1,3 @@
-
-
-
-
-
-
 let productosHome = [
     {id: 1, nombre: "habitacion 1", precio: 3000, img: "./img/img1.jpg"},
     {id: 2, nombre: "habitacion 2", precio: 5000, img: "./img/img2.jpg"},
