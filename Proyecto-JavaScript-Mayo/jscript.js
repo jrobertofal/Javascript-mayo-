@@ -19,28 +19,6 @@ const inputNombre = document.querySelector("#name")
 const inputUsuario = document.querySelector("#user")
 const enviarForm = document.querySelector("#form__enviar")
 
-inputNombre.addEventListener("keydown", (event) => {
-    if (inputNombre.value.length <= 7) {
-        inputNombre.classList.add("border-danger")
-        inputNombre.classList.remove("border-success")
-    }
-    else {
-        inputNombre.classList.add("border-success")
-        inputNombre.classList.remove("border_danger")
-    }
-})
-
-inputUsuario.addEventListener("keydown", () => {
-    if (inputUsuario.value.length <= 7) {
-        inputUsuario.classList.add("border-danger")
-        inputUsuario.classList.remove("border-success")
-    }
-    else {
-        inputUsuario.classList.add("border-success")
-        inputUsuario.classList.remove("border_danger")
-    }
-})
-
 formulario.addEventListener("submit", (e) => {
     e.preventDefault()
 
@@ -75,8 +53,8 @@ const contadorCarrito = document.querySelector('#contadorCarrito')
 const precioTotal = document.querySelector("#precioTotal")
 const btnVaciar = document.getElementById("vaciarCarrito")
 
-let guardado
-const guardadoEnLS = JSON.parse(localStorage.getItem("guardado"))
+let guardado = JSON.parse(localStorage.getItem("guardado")) ? JSON.parse(localStorage.getItem("guardado")) : []
+
 
 // DOM PRODUCTOS
 productosHome.forEach((producto) => {
@@ -101,6 +79,8 @@ productosHome.forEach((producto) => {
 const agregarAlGuardado = (id) => {
     const item = productosHome.find( (producto) => producto.id === id)
     guardado.push(item)
+
+    guardadoMensaje(item.nombre)
 
     localStorage.setItem("guardado", JSON.stringify(guardado))
 
@@ -151,9 +131,24 @@ function eliminarItem(e) {
     localStorage.setItem("guardado", JSON.stringify(guardado))
 }
 
-if(guardadoEnLS) {
-    guardado = guardadoEnLS,
-    renderGuardado()
- } else{
-    guardado = []
- }
+const guardadoMensaje = (producto) => {
+    Toastify({
+        text: `Se a agregado ${producto} al guardado`,
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, orange, orange, white, white)",
+            color:'black',
+        }
+    }).showToast()
+}
+
+const eliminarMensaje = (producto) => {
+    Toastify({
+        text: `Se a agregado ${producto} al guardado`,
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, orange, orange, white, white)",
+            color:'black',
+        }
+    }).showToast()
+}

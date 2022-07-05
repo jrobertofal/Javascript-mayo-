@@ -237,8 +237,7 @@ body{
     border: 1px solid blue;
     cursor: pointer;
 }
-
-
+/*  */
 .producto{
     display: flex;
     justify-content: space-between;
